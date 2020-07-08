@@ -6,7 +6,7 @@
        Account Payment Report""",
 
 
-    'author': "El-sayed Iraky",
+    'author': "Ahmed Saber",
 
     'category': 'accounting',
     'version': '0.1',
