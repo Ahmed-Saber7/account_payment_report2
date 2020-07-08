@@ -1,0 +1,39 @@
+<odoo>
+    <data>
+        <record id="payment_report_wizerd_view" model="ir.ui.view">
+            <field name="name">payment.report.form</field>
+            <field name="model">payment.report</field>
+            <field name="arch" type="xml">
+                <form string="Tikcet Period">
+
+                    <group col="4">
+                        <field name="selected_date"/>
+<!--                        <field name="date_to"/>-->
+
+                    </group>
+                    <footer>
+                        <button name="payment_report" string="Print" type="object" default_focus="1"
+                                class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window id='payment_report_wizerd_action' res_model='payment.report'
+                    name='Account Payment Report' view_mode='form'
+                    target='new'
+                    context="{}"
+                    domain="[]" limit='80'
+        />
+
+        <!-- This Menu Item must have a parent and an action -->
+        <!-- This Menu Item Must have a parent -->
+        <!--<menuitem id="menue_report_support_manager" name="التقارير" groups="helpdesk.group_helpdesk_support_manager" parent="helpdesk.menu_helpdesk_root" sequence=""/>-->
+        <menuitem id="payment_report_wizerd_action_menu"  name="Paymnet Report" parent="account.menu_finance_receivables"
+                  action="payment_report_wizerd_action" sequence="3"/>
+
+
+    </data>
+</odoo>
